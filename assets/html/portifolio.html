@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Art.com PORTIFÓLIO</title>
+	<link rel="stylesheet" type="text/css" href="../css/portifolio_style.css">
+	<meta charset="utf-8">
+	<meta id="viewport" name="viewport" content="width=device-width, user-scalable=no"/>
+</head>
+<body>
+<!--MENU MOBILE-->
+	<nav>
+		<ul id="mobile">
+          <li><a href="../../index.html">HOME</a></li>
+					<li><a class="active" href="">PORTIFÓLIO</a></li>
+					<li><a href="blog.html">BLOG</a></li>
+        </ul>
+    </nav> 
+<!--MENU PC--> 
+<header>
+	<!--LOGO-->
+	<div class="logo">
+		<a href="../../index.html">
+		<img src="../img/logo.png">
+		</a>
+	</div>
+	<!--OPÇÕES DO MENU -->
+	<div class="menu">
+            <nav>
+            	<!--DESENHO MENU MOBILE-->
+            	<div class="menu_mobile">
+					<div class="mm_line"></div>
+					<div class="mm_line"></div>
+					<div class="mm_line"></div>
+				</div>
+            	<ul>
+                	<li><a href="../../index.html">HOME</a></li>
+					<li><a class="active" href="">PORTIFÓLIO</a></li>
+					<li><a href="blog.html">BLOG</a></li>
+                </ul>
+            </nav>
+    </div>
+    <!--ICONES DE MENSAGEM E COMPARTILHAMENTO-->
+ 	 <div class="share">
+		<div class="mail"></div>
+		<div class="share_icon"></div>
+	</div>
+</header>
+	
+	<!--CONTEÚDO GERAL-->
+	<section>
+		<!--BOTÕES DE TROCA DE IMAGEM-->
+		<a class="next" onclick="plusSlides(1)">❯</a>
+		<a class="prev" onclick="plusSlides(-1)">❮</a>
+		<!--CONTEÚDO DAS LISTAS E SLIDER-->
+		<div class="container">
+			<!--CONTEÚDO LISTA 1-->
+			<div class="lista" id="bloco1">
+			<div class="image" style="background-image: url('../img/pf1.jpg');background-size: cover;background-position: center;">
+					<div class="blocos_overlay" onclick="currentSlide(1)"></div>
+				</div>
+				<div class="image" style="background-image: url('../img/pf2.jpg');background-size: cover;background-position: center;">
+					<div class="blocos_overlay" onclick="currentSlide(2)"></div>
+				</div>
+				<div class="image" style="background-image: url('../img/pf3.jpg');background-size: cover;background-position: center;">
+					<div class="blocos_overlay" onclick="currentSlide(3)"></div>
+				</div>
+			</div>
+			<!--CONTEÚDO SLIDER-->
+			<div class="slider">
+				<img class="mySlides" src="../img/pf1.jpg">
+				<img class="mySlides" src="../img/pf2.jpg">
+				<img class="mySlides" src="../img/pf3.jpg">
+				<img class="mySlides" src="../img/pf4.jpg">
+				<img class="mySlides" src="../img/pf5.jpg">
+				<img class="mySlides" src="../img/pf6.jpg">
+
+			</div>
+			<!--CONTEÚDO LISTA 2-->
+			<div class="lista" id="bloco2">
+				<div class="image" style="background-image: url('../img/pf4.jpg');background-size: cover;background-position: center;">
+					<div class="blocos_overlay" onclick="currentSlide(4)"></div>
+				</div>
+				<div class="image" style="background-image: url('../img/pf5.jpg');background-size: cover;background-position: center;">
+					<div class="blocos_overlay" onclick="currentSlide(5)"></div>
+				</div>
+				<div class="image" style="background-image: url('../img/pf6.jpg');background-size: cover;background-position: center;">
+					<div class="blocos_overlay" onclick="currentSlide(6)"></div>
+				</div>
+			</div>
+		</div>	
+	</section>
+<script>
+	//RESOLVI DEIXAR OS CÓDIGOS DE JS DENTRO DESTE ARQUIVO PARA FACILITAR A COMPREENSÃO 
+
+	//ATIVA E DESATIVA A VISUALIZAÇÃO DO MENU MOBILE 
+	window.onload = function(){
+		document.querySelector(".menu_mobile").addEventListener("click", function(){
+			if(document.querySelector("#mobile").style.display == 'flex'){
+				document.querySelector("#mobile").style.display = 'none';
+			} else{
+				document.querySelector("#mobile").style.display = 'flex';
+			}
+		});
+	};
+		//SLIDER
+		var slideIndex = 1;
+		showSlides(slideIndex);
+		//FUNÇÃO QUE TROCA A IMAGEM DO SLIDE
+		function plusSlides(n) {
+  			showSlides(slideIndex += n);
+		}
+		//FUNÇÃO QUE DESCOBRE A POSIÇÃO DA IMAGEM NO SLIDE
+		function currentSlide(n) {
+  			showSlides(slideIndex = n);
+		}
+		//FUNÇÃO QUE MOSTRA A IMAGEM DO SLIDE
+		function showSlides(n) {
+  			var i;
+  			var slides = document.getElementsByClassName("mySlides");
+  			if (n > slides.length) {slideIndex = 1}
+  			if (n < 1) {slideIndex = slides.length}
+  			for (i = 0; i < slides.length; i++) {
+     			slides[i].style.display = "none";
+  			}
+  
+  			slides[slideIndex-1].style.display = "block";
+		}
+</script>
+
+
+</body>

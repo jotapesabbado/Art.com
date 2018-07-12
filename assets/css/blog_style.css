@@ -1,0 +1,247 @@
+/*******************************ESTILO GERAL*************************/
+*{
+	font-family: arial;
+	color:white;
+}
+body{
+	margin: 0;
+	padding: 0;
+
+}
+
+/****************************ESTILO GERAL DO MENU****************************/
+header{
+	z-index: 10;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content:space-between;
+	background-color: #1d3f4c;
+	width: 100%;
+}
+
+/******************************ESTILO DA LOGO**************************/
+
+.logo{
+	border-right: 1px solid white;
+	display: flex;
+	align-items: center;
+
+}
+.logo img{
+	max-width: 100px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+/*****************************ESTILO DAS OPÇÕES DO MENU***************************/
+
+
+.menu{	
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+nav ul,nav li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav ul{
+	display: flex;
+}
+nav a{
+	display: block;
+	padding: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	transition:ease-in-out 0.5s;
+}
+
+.active{
+	background-color: #142d37;
+	color: #ffff00;	
+}
+
+
+/*****************************ESTILO DOS ICONES DE MENSGAME E COMPARTILHAMENTO***************************/
+.share{
+	display: flex;
+	align-items: center;
+	border-left: 1px solid white;
+	max-width: 120px;
+}
+.share div{
+	background-size: cover;
+	background-position: center;
+	width: 40px;
+	height: 40px;
+	margin-left:10px;
+	margin-right: 10px;
+	transition:ease-in-out 0.5s;
+}
+.mail{
+	background-image: url('../img/mail1.png');
+}
+.share_icon{
+	background-image: url('../img/share1.png');
+}
+
+
+/***************************ESTILO GERAL DOS BLOCOS DE INFORMAÇÃO*****************************/
+
+section{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	margin-bottom: 58px;
+}
+
+
+.container{
+	width: 1000px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;	
+}
+
+.blocos{
+	background-color: red;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	transition:ease-in-out 0.5s;
+	background-color: white;
+}
+
+.date{
+	color:#1d3f4c;
+	padding: 10px;
+	line-height: 15px;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.image{
+	display: flex;
+	width: 100%;
+	height: 500px;
+}
+
+.titulo{
+	margin-right: 10px;
+	margin-left: 10px;
+	color:#1d3f4c;
+	padding: 10px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 0px solid;
+	transition:ease-in-out 0.2s;
+}
+
+.bloco_overlay{
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	max-height: 0;
+	background-color: white;
+	transition:ease-in-out 0.5s;
+}
+
+.texto{
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	color: #80b8c7;
+}
+
+
+/*********MOVIMENTAÇÕES QUANDO O MOUSE PASSA POR CIMA DA REFERENCIA********/
+
+nav a:hover{
+	background-color: #142d37;
+	color: #ffff00;
+}
+.mail:hover{
+	background-image: url('../img/mail2.png');
+}
+
+.share_icon:hover{
+	background-image: url('../img/share2.png');
+}
+
+.blocos:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.blocos:hover .titulo{
+	border-bottom: 4px solid #80b8c7;
+
+}
+
+.blocos:hover .bloco_overlay{
+	max-height: 100%;
+}
+
+/***************************ESTILO DO MENU MOBILE*****************************/
+
+
+#mobile{
+	background-color: #1d3f4c;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu_mobile{
+	display: none;
+	width: 40px;
+	height: 100%;
+}
+
+.mm_line{
+	margin: 3px;
+	height: 3px;
+	background-color: white;
+}
+
+
+
+/*************************ESTILO ESPECIFICO PARA MOBILE*******************************/
+
+@media only screen and (max-width: 778px){
+
+.menu nav ul{
+	display: none;
+}
+
+.menu_mobile{
+		display: flex;
+		flex-direction:column;
+		justify-content:space-around;
+}
+
+
+}
+
+
+
+
+
+
+
+

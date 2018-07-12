@@ -1,0 +1,509 @@
+
+
+/****************************ANIMAÇÃO DE FADE****************************/
+@keyframes fadein{
+	from{opacity: 0}
+	to{opacity: 1}
+}
+@keyframes fadeout{
+	from{opacity: 0}
+	to{opacity: 1}
+}
+
+/*******************************ESTILO GERAL*************************/
+
+*{
+	font-family: arial;
+	color:white;
+}
+body{
+	margin: 0;
+	padding: 0;
+
+}
+
+/****************************ESTILO GERAL DO MENU****************************/
+
+header{
+	z-index: 10;
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content:space-between;
+	background-color: #1d3f4c;
+	width: 100%;
+
+}
+
+/******************************ESTILO DA LOGO**************************/
+
+.logo{
+	border-right: 1px solid white;
+	display: flex;
+	align-items: center;
+
+}
+.logo img{
+	max-width: 100px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+/*****************************ESTILO DAS OPÇÕES DO MENU***************************/
+
+
+.menu{	
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+nav ul,nav li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav ul{
+	display: flex;
+}
+nav a{
+	display: block;
+	padding: 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: white;
+	transition:ease-in-out 0.5s;
+}
+
+.active{
+	background-color: #142d37;
+	color: #ffff00;	
+}
+
+/*****************************ESTILO DOS ICONES DE MENSGAME E COMPARTILHAMENTO***************************/
+
+.share{
+	display: flex;
+	align-items: center;
+	border-left: 1px solid white;
+	max-width: 120px;
+}
+.share div{
+	background-size: cover;
+	background-position: center;
+	width: 40px;
+	height: 40px;
+	margin-left:10px;
+	margin-right: 10px;
+	transition:ease-in-out 0.5s;
+}
+.mail{
+	background-image: url('../img/mail1.png');
+}
+.share_icon{
+	background-image: url('../img/share1.png');
+}
+
+/***************************ESTILO GERAL DOS BLOCOS DE INFORMAÇÃO*****************************/
+
+section{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 58px;	
+}
+
+.direita, .esquerda, .centro{
+	display: flex;
+	flex-direction: column;
+	width: 33.33%;
+	transition:ease-in-out 0.5s;
+	height: 100%;
+}
+ 
+ .direita{
+ 	background-color: #142d37;
+ }
+
+ .esquerda{
+ 	background-color: #142d37;
+
+ }
+ .centro{
+ 	background-color: white;
+ }
+
+/**************************ESTILO DOS TOPICOS DOS BLOCOS GERAIS******************************/
+
+
+.topico{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.topico img{
+	max-width: 200px;
+	transition:ease-in-out 0.5s;
+}
+
+.titulo{
+	margin-bottom: 5px;
+	padding: 10px;
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 3px solid ;
+	transition:ease-in-out 0.5s;
+	 
+}
+
+.esquerda .topico .titulo{
+	border-color: #ffff00;
+}
+
+/*************************ESTILO DE CADA CONTEÚDO DENTRO DOS BLOCOS GERAIS *******************************/
+
+#conteudo_esquerda{
+	justify-content:space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+#conteudo_centro{
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+#conteudo_direita{
+	justify-content:space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.conteudo{
+	display: flex;
+	width: 100%;
+}
+
+
+/***************************ESTILO DE CADA BLOCO DE CONTEÚDO INTERNO*****************************/
+
+#bloco_centro{
+	border: 2px solid #142d37;
+	border-radius:4px;
+	width: 150px;
+	height: 150px;
+	margin: 5px;
+}
+
+#bloco_esquerda{
+	width: 220px;
+	height: 220px;
+	margin-top: 5px;
+}
+
+#bloco_direita{
+	width: 180px;
+	height: 180px;
+
+}
+
+.blocos{
+	transition:ease-in-out 0.5s;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/***************************ESTILO DAS IMAGENS E CONTEÚDOS INTERNOS DE CADA BLOCO INTERNO*****************************/
+#bloco_direita img{
+	transition:ease-in-out 0.4s;
+	width: 100%;
+	height: 100%;
+}
+
+#bloco_centro img{
+	transition:ease-in-out 0.5s;
+	max-width: 100px;
+}
+
+.blocos_titulo{
+	visibility: 0;
+	font-size: 0px;
+	transition:ease-in-out 1s;
+	text-align: center;
+	line-height: 20px;
+}
+
+
+.image{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.blocos_overlay{
+	width: 100%;
+	height: 100%;
+	transition:ease-in-out 0.2s;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: column;
+}
+
+.funcionario{
+	transition:ease-in-out 0.3s;
+	padding: 10px;
+	font-weight: bold;
+	color: #ffff00;
+	font-size: 0px;
+}
+.funcionario_info{
+	transition:ease-in-out 0.2s;
+	padding: 10px;
+	font-size: 20px;
+	opacity: 0;
+}
+
+/***************************ESTILO DO MENU MOBILE*****************************/
+
+#mobile{
+	background-color: #1d3f4c;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu_mobile{
+	display: none;
+	width: 40px;
+	height: 100%;
+}
+
+.mm_line{
+	margin: 3px;
+	height: 3px;
+	background-color: white;
+}
+
+
+
+
+/*********MOVIMENTAÇÕES QUANDO O MOUSE PASSA POR CIMA DA REFERENCIA********/
+
+nav a:hover{
+	background-color: #142d37;
+	color: #ffff00;
+}
+
+.blocos :hover .blocos_overlay  {
+ 	background-color: #1d3f4c;
+ 	opacity: .8;
+ }
+
+#bloco_esquerda :hover .funcionario{
+	font-size: 25px;
+}
+
+#bloco_esquerda :hover .funcionario_info{
+	opacity: 1;
+}
+
+#bloco_direita :hover {	
+	  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mail:hover{
+	background-image: url('../img/mail2.png');
+}
+
+.share_icon:hover{
+	background-image: url('../img/share2.png');
+}
+
+
+/*****************************ESTILO ESPECIFICO DE PC ATÉ TABLET**********************************/
+
+
+
+@media only screen and (min-width: 778px) and (max-width: 2560px){
+section{
+	height:2940px;
+}
+
+.direita, .esquerda, .centro{
+	width: 33.33%;
+}
+
+
+#conteudo_esquerda{
+	animation-name: fadeout;
+	animation-duration:4s;
+}
+#conteudo_centro{
+	animation-name: fadeout;
+	animation-duration:4s;
+}
+
+#conteudo_direita{
+	animation-name: fadeout;
+	animation-duration:4s;
+}
+
+.holder{
+	width: 100%;
+	height: 30%; 
+	margin-top: 200px;
+}
+
+/********************************************************/
+
+ .direita:hover  {
+ 	width: 100%;
+ }
+ .esquerda:hover  {
+ 	width: 100%;
+ }
+
+.centro:hover  {
+ 	width: 100%;
+ }
+
+/********************************************************/
+
+
+.centro:hover #conteudo_centro{
+	animation-name: fadein;
+	animation-duration:4s;
+}
+
+.esquerda:hover #conteudo_esquerda{
+	animation-name: fadein;
+	animation-duration:4s;
+}
+
+.direita:hover #conteudo_direita{
+	animation-name: fadein;
+	animation-duration:4s;
+}
+
+/********************************************************/
+
+ .centro:hover .topico img {
+ 	max-width: 280px;
+ }
+ .centro:hover .titulo {
+ 	font-size: 20px;
+ }
+
+.esquerda:hover .titulo {
+ 	font-size: 20px;
+ }
+ .direita:hover .titulo {
+ 	font-size: 20px;
+ }
+
+/********************************************************/
+
+ .centro:hover #bloco_centro {
+ 	width: 200px;
+	height: 200px;
+ }
+ .esquerda:hover #bloco_esquerda {
+ 	width: 400px;
+	height: 400px;
+ }
+ 
+/********************************************************/
+
+ .centro:hover .blocos_titulo  {
+ 	color: #142d37;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
+ }
+
+ .centro:hover #bloco_centro img  {
+ 	max-width: 120px;
+ }
+
+
+}
+
+
+/*************************ESTILO ESPECIFICO PARA MOBILE*******************************/
+
+
+@media only screen and (max-width: 778px){
+
+section{
+	height: 100%;
+	flex-direction: column;
+}
+
+.direita, .esquerda, .centro{
+	width: 100%;
+	padding-bottom: 20px;
+	
+}
+
+.esquerda{
+ background-color: white;
+}
+
+/********************************************************/
+
+.esquerda .topico .titulo{
+	color:#142d37;
+	border-color: #80b8c7;
+}
+
+.funcionario{
+	color:#80b8c7; 
+}
+
+ .blocos_titulo  {
+ 	color: #142d37;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 5px;
+ }
+
+/********************************************************/
+
+.holder{
+	display: none;
+}
+
+/********************************************************/
+
+.menu nav ul{
+	display: none;
+}
+
+/********************************************************/
+.menu_mobile{
+		display: flex;
+		flex-direction:column;
+		justify-content:space-around;
+}
+
+
+/*************************NOVA ORDEM DE POSICIONAMENTO*******************************/
+div#centro  {order: 1;}
+div#esquerda {order: 3;}
+div#direita  {order: 2;}
+
+}
+
+
